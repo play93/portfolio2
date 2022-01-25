@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<!--폰트어썸-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<!--css외부정의-->
+<link href="reset.css" rel="stylesheet">
+<link href="header.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
+<link href="footer.css" rel="stylesheet">
+
+<!--제이쿼리_라이브러리-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--제이쿼리UI-->
+<script src="jquery_ui/jquery-ui.min.js"></script>
+<!--제이쿼리css-->
+<link href="jquery_ui/jquery-ui.min.css" rel="stylesheet">
+
+
+<!--외부정의 js-->
+<script src="custom.js" defer></script>
+ 
+</head>
+
+<body>
+    <!--네비게이션-->
+    <div class="top_nav clear">
+        <div class="wrap clear">
+            <!--toggle-->
+            <a href="#" class="togglebtn"><i class="fas fa-bars"></i></a>
+            <!--logo-->
+            <div class="logo">
+                <a class="home" href="#home"><img src="logo.png"></a>
+            </div>
+            <!--menu-->
+            <div class="right clear">
+                <a href="#">About</a>
+                <a href="#">Artist</a>
+                <a href="#">News</a>
+                <a href="#">Company</a>
+                <!--icon-->
+                <ul class="icon">
+                    <li>ㅣ</li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!--top_nav clear END-->
+
+    <!--우측에 고정되는 페이지 슬라이드버튼-->
+    <!---
+    <ul class="page_slide">
+        <li class="on">
+            <a href="#">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </a>
+        </li>
+    </ul>
+-->
+<button class="page_slide"><i class="fas fa-angle-up"></i></button>
+
+    <!--배너-->
+    <section id="banner">
+        <!--동영상 max-width:1920~1280-->
+        <ul class="videoGroup clear">
+            <li class="mySlides fade on">
+                <video src="AdobeStock_100497973.mp4" loop autoplay muted></video>
+                <div class="name">
+                    <h1>ADELE</h1>
+                    <p>아델</p>
+                    <button>more</button>
+                </div>
+            </li>
+            <li class="mySlides fade">
+                <video src="AdobeStock_203537334.mp4" loop autoplay muted></video>
+                <div class="name">
+                    <h1>HALF-ALIVE</h1>
+                    <p>하프 얼라이브</p>
+                    <button>more</button>
+                </div>
+            </li>
+            <li class="mySlides fade">
+                <video src="AdobeStock_295411573.mp4" loop autoplay muted></video>
+                <div class="name">
+                    <h1>POLO G</h1>
+                    <p>폴로 지</p>
+                    <button>more</button>
+                </div>
+            </li>
+        </ul>
+        <!--이미지 max-width:860px~768px-->
+        <ul class="slide_content">
+            <li class="item1 on">
+                <!--<img src="adele_banner.jpg" alt="">-->
+                <div class="name">
+                    <h1>ADELE</h1>
+                    <p>아델</p>
+                    <button>more</button>
+                </div>
+            </li>
+            <li class="item2">
+                <!--<img src="What's Wrong (Official Video).jpg" alt="">-->
+                <div class="name">
+                    <h1>HALF-ALIVE</h1>
+                    <p>하프 얼라이브</p>
+                    <button>more</button>
+                </div>
+            </li>
+            <li class="item3">
+                <!--<img src="rapstar.jpg" alt="">-->
+                <div class="name">
+                    <h1>POLO G</h1>
+                    <p>폴로 지</p>
+                    <button>more</button>
+                </div>
+            </li>
+        </ul>
+        <!--슬라이드 버튼-->
+        <ul class="dots">
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+        </ul>
+    </section><!--banner END-->
+
+    <!--아티스트-->
+    <section id="artist">
+        <h1>Artist</h1>
+        <p>아티스트</p>
+        <div class="more">
+            <button>more</button>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <img src="artist/1-1.png" alt="">
+                <div class="overlay">
+                    <h2>ADEL</h2>
+                    <p>아델</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="artist/6-6.png" alt="">
+                <div class="overlay">
+                    <h2>ALAN WALKER</h2>
+                    <p>앨런 워커</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="artist/2-2.png" alt="">
+                <div class="overlay">
+                    <h2>MOMOLAND</h2>
+                    <p>모모랜드</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="artist/3-3.png" alt="">
+                <div class="overlay">
+                    <h2>LOLO ZOUAI</h2>
+                    <p>롤로 주아이</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="artist/5-5.png" alt="">
+                <div class="overlay">
+                    <h2>JOHN LEGEND</h2>
+                    <p>존 레전드</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="artist/4-4.png" alt="">
+                <div class="overlay">
+                    <h2>KHALID</h2>
+                    <p>칼리드</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--추천동영상 Featured Videos-->
+    <section id="f_videos">
+        <h1>Featured Videos</h1>
+        <p>추천 동영상</p>
+        <div class="more">
+            <button>more</button>
+        </div>
+        <div class="fv_content">
+            <div class="wrap">
+                <ul class="video_box">
+                    <li>
+                        <a href="#">
+                            <img src="featuredVideos/1-1.png" alt="">
+                        </a>
+                    </li>
+                    <li class="text">
+                        <a href="#"><h3>What's Wrong (Official Video)</h3></a>
+                        <a href="#"><p>half-alive</p></a>
+                    </li>
+                    <li class="play">
+                        <a href="#"><i class="far fa-play-circle"></i></a>
+                    </li>
+                </ul>
+                <ul class="video_box">
+                    <li>
+                        <a href="#">
+                            <img src="featuredVideos/2-2.png" alt="">
+                        </a>
+                    </li>
+                    <li class="text">
+                        <a href="#"><h3>RAPSTAR (Official Video)</h3></a>
+                        <a href="#"><p>Polo G</p></a>
+                    </li>
+                    <li class="play">
+                        <a href="#"><i class="far fa-play-circle"></i></a>
+                    </li>
+                </ul>
+                <ul class="video_box">
+                    <li>
+                        <a href="#">
+                            <img src="featuredVideos/3-3.png" alt="">
+                        </a>
+                    </li>
+                    <li class="text">
+                        <a href="#"><h3>Strangers By Nature</h3></a>
+                        <a href="#"><p>Adele</p></a>
+                    </li>
+                    <li class="play">
+                        <a href="#"><i class="far fa-play-circle"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="music_video">
+            <video src="featuredVideos/Whats Wrong Official Video.mp4" controls="true" autoplay="true" muted></video>
+            <img src="close2.png" class="close">
+        </div>
+    </section>
+
+    <!--새로운소식 News-->
+    <section id="news">
+        <h1>News</h1>
+        <p>새로운 소식</p>
+        <div class="more">
+            <button>more</button>
+        </div>
+        <div class="wrap">
+            <article>
+                <div class="flip-news">
+                    <div class="flip-card-inner">
+                        <div class="news-front">
+                            <img src="news/1-1.png" alt="news1">
+                        </div>
+                        <div class="news-back">
+                            <p>see more</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-title">
+                    <h3>
+                        Now Introducing: Sony Music Group’s<br> 
+                        Full Scale Fellowship Program
+                    </h3>
+                    <p>
+                        Dec 07, 2021
+                    </p>
+                </div>
+            </article>
+            <article>
+                <div class="news-title">
+                    <h3>
+                        SMG Global Social Justice Fund Update
+                    </h3>
+                    <p>
+                        Nov 23, 2021
+                    </p>
+                </div>
+                <div class="flip-news">
+                    <div class="flip-card-inner">
+                        <div class="news-front">
+                            <img src="news/2-2.png" alt="news2">
+                        </div>
+                        <div class="news-back">
+                            <p>see more</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+    </section>
+
+    <!--레이블 Labels-->
+    <section id="labels">
+        <h1>Labels</h1>
+        <p>레이블</p>
+        <div class="more">
+            <button>more</button>
+        </div>
+        <ul>
+            <li><a href="#"><img src="label/Epic_Records2.png" alt=""></a></li>
+            <li><a href="#"><img src="label/arista.png" alt=""></a></li>
+            <li><a href="#"><img src="label/masterworks.png" alt=""></a></li>
+            <li><a href="#"><img src="label/columbia.png" alt=""></a></li>
+            <li><a href="#"><img src="label/rca.png" alt=""></a></li>
+        </ul>
+        
+        
+    </section>
+    <footer>
+        <div class="f_top">
+            <div class="f_logo">
+                <a href="#"><img src="f_logo.png" alt=""></a>
+            </div>
+            <div class="f_info">
+                <h3>Info</h3>
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li>ㅣ</li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li>ㅣ</li>
+                    <li><a href="#">Privacy Policy (English)</a></li>
+                    <li>ㅣ</li>
+                    <li><a href="#">대표자: 장윤중</a></li><br>
+                </ul>
+                <p>소재지: 서울시 서초구 강남대로 465, 교보타워 B동 20층 (서초동 1303-22)</p>
+                <p>사업자등록번호: 114-81-54158</p>
+                <p>사업영역: 음악 콘텐츠 기획 및 제작 사업, 온.오프라인 유통사업 외</p>
+                <p>법인등록번호: 110111-0662026</p>
+            </div>
+            <div class="f_wrap">
+                <div class="f_contact">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:sonymusic.korea@sonymusic.com">sonymusic.korea@sonymusic.com</a></p>
+                </div>
+                <div class="f_sns">
+                    <h3>Sns</h3>
+                    <ul class="snsList">
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="down">
+            <p>Copyright &copy; 2021 Sony Music Entertainment Korea Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

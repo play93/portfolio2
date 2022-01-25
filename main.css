@@ -1,0 +1,1074 @@
+
+/*우측에 있는 페이지 넘기는 버튼*/
+.page_slide{
+    width:70px;
+    height:70px;
+    position:fixed;
+    bottom:80px;
+    right:80px;
+    z-index: 99;
+    box-sizing: border-box;
+    background-color: rgb(206,33,39,0.8);
+    border-radius: 50%;
+    font-size: 40px;
+    border:none;
+    color:#fff;
+    cursor: pointer;
+    transition:all 0.3s;
+    z-index: 777;
+    display: none;
+}
+.page_slide:hover{
+    background-color: var(--point-color);
+}
+@media screen and (max-width:1280px){
+    .page_slide{
+        width:60px;
+        height:60px;
+        right:45px; bottom:45px;
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:860px){
+    .page_slide{
+        width:55px;
+        height:55px;
+        right:40px; bottom:40px;
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:480px){
+    .page_slide{
+        width:50px;
+        height:50px;
+        right:20px; bottom:20px;
+        font-size: 25px;
+    }
+}
+/*============================배너===============================*/
+/***********************************창의 높이를 줄이면 레이아웃이 무너짐 */
+/***********************************높이별로도 따로 작성해야하는지*/
+#banner{
+    box-sizing: border-box;
+    width:100%; 
+    position: relative;
+    margin:auto;
+    background-color: #000;
+    overflow: hidden;
+}
+
+/*===================1920이하~1280이하 배너영상*/
+/*
+***********************************배너안에 영상 2개넣어서 200% 맞췄는데 오른쪽에 빈칸이 생김 
+***********************************overflow:hidden줘서 가리면되긴 한데 왜 생기는지 모르겠음
+*/
+.videoGroup{
+    width:100%;
+    background-color: #000;
+    position:relative;
+    padding-top:56.25%;
+}
+
+.videoGroup > li{
+    width:100%;
+    position:absolute;
+    left:-100%; top:0;
+}
+.videoGroup > li.on{
+    left:0;
+}
+
+.videoGroup > li > video{
+    width:100%;
+}
+
+/*
+.videoGroup > li > video{
+    width:100%;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+*/
+
+/*============================가수정보*/
+/*문제-
+닷버튼처럼 고정되어있지않고
+영상에 붙어서 위아래로 이동함
+->그래서 높이를 줄이면 밑으로 사라짐..
+->                           position :absolute주고 width:100%;
+                           줬더니 처음 페이지에선 멀정하게 보이는데 닷버튼 눌러서
+                            페이지 전환하면 이상해짐
+->영상 4개 이어붙이면서 해결함
+->새로고침하면 멀쩡한데 
+닷버튼 클릭하면 갑자기 내용이 한 페이지씩 밀려버림
+*/
+
+.name{
+    width:100%;
+    float:left;
+    bottom:100px;
+    text-align: center;
+    position: absolute;
+}
+/*가수이름(영문)*/
+.name > h1{
+    letter-spacing:10px;
+    font-size: 65px;
+    color:var(--white-color);
+}
+/*가수이름(한글)*/
+.name > p{
+    letter-spacing: 5px;
+    color:var(--white-color);
+    font-family: "맑은 고딕";
+    margin-bottom: 15px;
+}
+/*more버튼*/
+.name > button{
+    width:124px;
+    height:40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color:rgb(0,0,0,0.7);
+    border:1px solid var(--white-color);
+    color:var(--white-color);
+    transition: all 0.2s;
+}
+
+.name > button:hover{
+    background-color: var(--point-color);
+    border:1px solid var(--white-color);
+    color:var(--white-color);
+}
+
+/*===================860이하~480이하 배너이미지*/
+/*
+*************************이름정보 & 이미지 가운데정렬이 안됨 !스크롤이 생김!
+
+=>해결 body에 min-width 1000걸려있는거 지움*/
+.slide_content{
+    display: none;
+    width:300%;
+    background-color: #000;
+}
+.slide_content > li{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left:-100%;
+    /*
+    width:33.3333%;
+    height: 80vh;
+    float:left;
+    
+    background-color: #000;
+    background-image: url(adele_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    */
+}
+.slide_content > li.on{
+    left:0;
+}
+.slide_content img{
+    width:100%;
+    padding-top: 15%;
+    float:left;
+    align-items: center;
+    vertical-align: middle;
+}
+.item1{
+    left:0;
+    background: url(artist/1-2.jpg) center top no-repeat;
+    background-size: cover;
+}
+.item2{
+    left:100%;
+    background: url(artist/2-2.jpg) center top no-repeat;
+    background-size: cover;
+}
+.item3{
+    left:200%;
+    background: url(artist/3-2.jpg) center top no-repeat;
+    background-size: cover;
+}
+/*가수이름(영문)*/
+.slide_content .name > h1{
+    letter-spacing:8px;
+    font-size: 50px;
+    color:var(--white-color);
+}
+/*가수이름(한글)*/
+.slide_content .name > p{
+    letter-spacing: 2px;
+    font-size: 17px;
+    color:var(--white-color);
+    font-family: "맑은 고딕";
+    margin-bottom: 15px;
+}
+
+/*=========================이미지슬라이드 dot버튼*/
+.dots{
+    position:absolute;
+    left:50%;
+    bottom:40px;
+    transform:translateX(-50%);
+    z-index: 2;
+}
+
+.dots > li{
+    float:left;
+    width:10px; height:10px;
+    border-radius: 50%;
+    border:1px solid var(--white-color);
+    margin:0 5px;
+    cursor:pointer;
+    transition: all 0.2s;
+    background-color: rgb(0,0,0,0.6);
+}
+
+.dots > li.on{
+    border:1px solid var(--point-color);
+    width:40px;
+    border-radius:20px;
+}
+.dots > li:hover{
+    border:1px solid var(--point-color);
+}
+
+@media screen and (max-width:1280){
+    .slide_content{display: none;}
+}
+
+@media screen and (max-width:860px){
+    .videoGroup{display: none;}
+    #banner{
+        height: 80vh;
+        width:100%;
+    } 
+    .slide_content{
+        display: block;
+    }
+    .name > h1{font-size: 50px;}
+}
+
+@media screen and (max-width:480px){
+    .slide_content .name > h1{font-size: 40px;}
+    .slide_content .name > p{font-size: 15px;}
+}
+/*================================아티스트=============================*/
+#artist{
+    position:relative;
+    padding:120px 0px 0px;
+    box-sizing: border-box;
+}
+
+#artist > h1{
+    font-family: Clarendon;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: var(--font-title);
+}
+#artist > p{
+    font-size: var(--font-mc);
+    display: flex;
+    justify-content: center;
+}
+.more{
+    margin-top:15px;
+    display: flex;
+    justify-content: center;
+}
+.more > button{
+    width:124px;
+    height:40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border:1px solid var(--title-color);
+    transition: all 0.2s;
+    margin-bottom: 0;
+}
+.more > button:hover{
+    background-color: var(--point-color);
+    border:none;
+    color:var(--white-color);
+}
+.container{
+    margin-top:80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    
+}
+#artist > .container > .box{
+    width:25%;
+    height:20%;
+    float:left;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin:5px;
+}
+#artist > .container > .box > img{
+    width:100%;
+    height:100%;
+    display: block;
+}
+.box > .overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0; top:0;
+    background-color: rgba(0,0,0,0.4);
+    top:100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.box > .overlay > h2{
+    font-size: var(--font-contentTitle);
+    letter-spacing: 3px;
+    color:var(--white-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.box > .overlay > p{
+    font-size: var(--font-sm);
+    color:var(--white-color);
+    position: absolute;
+    bottom:10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*===아티스트 호버했을 때 박스에 빨간테두리====*/
+.box::before,
+.box::after{
+    content:"";
+    box-sizing:border-box;
+    position: absolute;
+    border: 2px solid transparent;
+    width:0;
+    height:0;
+    z-index: 1;
+    cursor: pointer;
+}
+.box::before{top:0; left:0; }
+.box::after{bottom:0; right:0; }
+
+.box:hover::before,
+.box:hover::after{
+    width:100%; height:100%; 
+}
+
+.box:hover::before{
+    border-top-color: var(--point-color);
+    border-right-color: var(--point-color);
+    transition:width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.box:hover::after{
+    border-bottom-color: var(--point-color);
+    border-left-color: var(--point-color);
+    transition:border-color 0s 0.5s, width 0.25s ease-out 0.5s,height 0.25s ease-out 0.75s
+}
+/*=====
+
+after부분은 사진에 안가리는데 before부분은 사진에 가림 ??
+테두리 생기는 효과 끝나고나면 cusor:pointer 효과가 사라짐 ??
+
+*/
+
+.box:hover > .overlay{top:0;}
+
+@media screen and (max-width:1280px){
+    #artist > .container > .box{
+        width:30%;
+    }
+    .box > .overlay > h2{font-size: 25px;}
+    .box > .overlay > p{
+        font-size: 12px;
+        bottom:20px;
+    }
+    #artist{padding-top: 100px;}
+}
+@media screen and (max-width:860px){
+    .container{margin-top:60px;}
+    #artist{padding-top: 80px;}
+}
+@media screen and (max-width:768px){
+    #artist > .container > .box{
+        width:48%;
+    }
+    #artist > .container > .box:nth-child(5),
+    #artist > .container > .box:nth-child(6){
+        display: none;
+    }
+    #artist > h1{font-size: 45px;}
+    .container{margin-top:40px;}
+    #artist{padding-top: 60px;}
+}
+@media screen and (max-width:521px){
+    #artist > .container > .box{
+        width:45%;
+    }
+}
+@media screen and (max-width:480px){
+    #artist > h1{font-size: 40px;}
+    .box > .overlay > h2{
+        font-size: 20px;
+        bottom:30px;
+    }
+    .box > .overlay > p{
+        font-size: 10px;
+        bottom:15px;
+    }
+    #artist{padding-top: 50px;}
+    .container{margin-top:40px;}
+}
+/*================================추천동영상=============================*/
+/*==타이틀==*/
+#f_videos{
+    position:relative;
+    padding:120px 0px 140px;
+    box-sizing: border-box;
+}
+
+#f_videos > h1{
+    font-family: Clarendon;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: var(--font-title);
+}
+#f_videos > p{
+    font-size: var(--font-mc);
+    display: flex;
+    justify-content: center;
+}
+.more{
+    margin-top:15px;
+    display: flex;
+    justify-content: center;
+}
+.more > button{
+    width:124px;
+    height:40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border:1px solid var(--title-color);
+    transition: all 0.2s;
+}
+.more > button:hover{
+    background-color: var(--point-color);
+    border:none;
+    color:var(--white-color);
+}
+/*==내용==*/
+.fv_content > .wrap{
+    display:flex;
+    justify-content: center;
+    margin: 80px 150px 0px 150px;
+    flex-wrap: wrap;
+}
+
+.fv_content .video_box{
+    width:31%;
+    margin:calc(var(--padding-sm)/2);
+    position: relative;
+    border:1px solid #aaa;
+    transition:all 0.3s;
+    overflow: hidden;
+}
+
+.fv_content .video_box img{
+    width:100%;
+    height:auto;
+    display: block;
+    transition:all 0.3s;
+}
+.video_box > .text{
+    width:100%;
+    height: 60px;
+    padding:20px 15px;
+    padding-bottom:80px;
+}
+.video_box > .text h3{
+    font-size: 18px;
+}
+.video_box > .text p{
+    font-size: 14px;
+}
+.video_box > .text:hover{
+    text-decoration: underline;
+}
+.video_box > .play{
+    font-size: 120px;
+    color:#aaa;
+    position: absolute;
+    left:50%;
+    top:20%;
+    transform: translateX(-50%);
+    transition:all 0.3s ease-in-out;
+}
+.video_box:hover > .play{
+    color:var(--point-color);
+}
+.video_box:hover img{
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+/*
+.video_box > .overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0; top:0;
+    background-color: rgba(0,0,0,0.4);
+    color:#aaa;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding-left:160px;
+    padding-top:150px;
+}
+.video_box > .overlay > i{
+    font-size: 150px;
+}
+*/
+/*===비디오박스 호버했을 때 박스에 빨간테두리====*/
+.video_box::before,
+.video_box::after{
+    content:"";
+    box-sizing:border-box;
+    position: absolute;
+    border: 2px solid transparent;
+    width:0;
+    height:0;
+    z-index: 1;
+    cursor: pointer;
+}
+.video_box::before{top:0; left:0; }
+.video_box::after{bottom:0; right:0; }
+
+.video_box:hover::before,
+.video_box:hover::after{
+    width:100%; height:100%; 
+}
+
+.video_box:hover::before{
+    border-top-color: var(--point-color);
+    border-right-color: var(--point-color);
+    transition:width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.video_box:hover::after{
+    border-bottom-color: var(--point-color);
+    border-left-color: var(--point-color);
+    transition:border-color 0s 0.5s, width 0.25s ease-out 0.5s,height 0.25s ease-out 0.75s
+}
+/*======================================*/
+
+.music_video{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 100000;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    /*visibility: hidden;
+    opacity: 1;
+    */
+    display: none;
+}
+.music_video video{
+    max-width: 900px;
+    outline: none;
+}
+.close{
+    position:absolute;
+    top:30px;
+    right: 30px;
+    cursor: pointer;
+    max-width: 32px;
+}
+
+
+@media screen and (max-width:1280px){
+    #f_videos{
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    .fv_content > .wrap{
+        margin:40px 40px 0px 40px;
+    }
+    .video_box > .play{
+        font-size: 80px;
+    }
+    .fv_content > .wrap > .video_box{
+        width:30%;
+    }
+}
+@media screen and (max-width:860px){
+    #f_videos{
+        padding-top: 80px;
+        padding-bottom: 0;
+    }
+    .fv_content > .wrap > ul:last-child{
+        display: none;
+    }
+    .fv_content > .wrap{
+        margin: 40px 5px 0px 5px;
+    }
+    .fv_content > .wrap > .video_box{
+        width:47%;
+    }
+    
+    #f_videos > h1{font-size: 45px;}
+    .video_box > .text h3{
+        font-size: 15px;
+    }
+    .video_box > .text p{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:700px){
+    #f_videos{
+        padding-top: 60px;
+    }
+    .fv_content .video_box{
+        margin:5px;
+    }
+    .fv_content > .wrap{
+        margin: 40px 5px 0px 5px;
+    }
+}
+@media screen and (max-width:560px){
+    
+    .fv_content > .wrap{
+        margin: 40px 3px 0px 3px;
+    }
+}
+@media screen and (max-width:480px){
+    #f_videos{
+        padding-top: 40px;
+    }
+    .fv_content > .wrap > .video_box{
+        width:95%;
+        height: 320px;
+    }
+    .fv_content .video_box img{
+        height: 240px;
+    }
+    #f_videos > h1{font-size: 40px;}
+    
+}
+/*================================새로운소식=============================*/
+#news{
+    position:relative;
+    padding:120px 0px 0px;
+    
+}
+
+#news > h1{
+    font-family: Clarendon;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: var(--font-title);
+}
+#news > p{
+    font-size: var(--font-mc);
+    display: flex;
+    justify-content: center;
+}
+.more{
+    margin-top:15px;
+    display: flex;
+    justify-content: center;
+}
+.more > button{
+    width:124px;
+    height:40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border:1px solid var(--title-color);
+    transition: all 0.2s;
+}
+.more > button:hover{
+    background-color: var(--point-color);
+    border:none;
+    color:var(--white-color);
+}
+#news > .wrap{
+    height:560px;
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 130px;
+}
+#news article{
+    width:100%;
+    height: 240px;
+    margin-bottom: 40px;
+    display: flex;
+}
+#news article:first-child{
+    margin-top: 40px;
+}
+#news .flip-news{
+    float:left;
+}
+#news .flip-news img{
+    width:100%;
+    height: 100%;
+}
+#news .news-title{
+    float:left;
+    margin:0 20px;
+}
+#news .news-title > h3{
+    font-size: 16px;
+    margin-top:80px;
+    margin-bottom:40px;
+    line-height: 20px;
+}
+#news .news-title > p{
+    font-size: 12px;
+    color:var(--sub-color);
+}
+#news article:last-child{
+    margin: auto 0 0 auto;
+    justify-content: flex-end;
+}
+#news article:last-child > .news-title > p{float:right;}
+
+
+.flip-news{
+    background-color: transparent;
+    width:380px;
+    height:240px;
+    perspective: 1000px;
+}
+.flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    text-align:center;
+    transition: transform 0.8s;/*변환효과 적용*/
+    transform-style:preserve-3d; /*요소에 원근감을 적용*/
+}
+.news-front,
+.news-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;/*요소의 뒷면을 가려주는 속성*/
+    cursor: pointer;
+}
+.news-back{
+    background: url(news/1-1.png)rgb(0,0,0,0.9);
+    background-size:cover;
+    background-blend-mode: multiply;
+    background-position: center;
+    color:var(--point-color);
+    font-size: 20px;
+    font-weight: bold;
+    transform: rotateY(180deg);
+}
+.wrap > article:nth-child(2) .news-back{
+    background-color: rgba(0,0,0,0.9);
+    background: url(news/2-2.png) rgba(0,0,0,0.9) no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.news-back > p{
+    line-height: 240px;
+}
+.flip-news:hover > .flip-card-inner{
+    transform: rotateY(180deg);
+}
+@media screen and (max-width:1280px){
+    #news{padding-top:100px;}
+    #news > .wrap{
+        margin:0 90px
+    }
+}
+@media screen and (max-width:860px){
+    #news{padding-top:80px;}
+    #news article:last-child > .news-title > p{float:left;}
+    #news article:last-child{
+        justify-content: flex-start;}
+    #news article:last-child > .flip-news{order:-1;}
+    #news article:last-child > .news-title{
+        order: 1;float: left;
+        width:280px;
+    }
+    #news > .wrap{
+        margin:0 50px
+    }
+    #news > h1{font-size: 45px;}
+}
+@media screen and (max-width:700px){
+    #news{padding-top:60px;}
+    .flip-news img{
+        width:300px;
+    }
+    #news .news-title > h3{
+        margin-top:50px;
+        margin-bottom: 20px;
+    }
+    #news > .wrap{
+        margin:0 30px
+    }
+}
+@media screen and (max-width:560px){
+    .flip-news img{
+        width:250px;
+    }
+    #news > .wrap{
+        margin:0 15px
+    }
+}
+@media screen and (max-width:480px){
+    #news{padding-top:40px;}
+    .flip-news img{
+        width:200px;
+    }
+    #news > .wrap{
+        margin:0 5px
+    }
+    #news > h1{font-size: 40px;}
+}
+/*================================레이블=============================*/
+#labels{
+    overflow: hidden;
+    position:relative;
+    padding:120px 0px 0px;
+}
+
+#labels > h1{
+    font-family: Clarendon;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: var(--font-title);
+}
+#labels > p{
+    font-size: var(--font-mc);
+    display: flex;
+    justify-content: center;
+}
+.more{
+    margin-top:15px;
+    display: flex;
+    justify-content: center;
+}
+.more > button{
+    width:124px;
+    height:40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border:1px solid var(--title-color);
+    transition: all 0.2s;
+}
+.more > button:hover{
+    background-color: var(--point-color);
+    border:none;
+    color:var(--white-color);
+}
+#labels ul{
+    width:100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+#labels li{
+    width:40%;
+    height: auto;
+    margin:0 10px;
+    transition:all 0.3s;
+}
+#labels li:hover{
+    transform:scale(1.2);
+    z-index: 2;
+}
+#labels li:hover img{
+    opacity: 1;
+}
+#labels > ul > li > a > img{
+    width:100%;
+    height: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    border:1px solid #aaa;
+    float: left;
+    opacity: 0.7;
+    background-color: #fff;
+}
+@media screen and (max-width:1280px){
+    #labels{padding-top:100px;}
+}
+@media screen and (max-width:860px){
+    #labels{padding-top:80px;}
+}
+@media screen and (max-width:780px){
+    #labels{padding-top:60px;}
+    #labels li{margin: 0 5px;}
+}
+@media screen and (max-width:480px){
+    #labels{padding-top:40px;}
+    #labels li:nth-child(4),
+    #labels li:nth-child(5){
+        display: none;
+    }
+}
+/*==========================footer====================================*/
+footer{
+    font-size: var(--font-mc);
+    color:#666;
+}
+footer > .f_top{
+    width:100%;
+    height:260px;
+    background-color: #171717;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:40px 0;
+    box-sizing: border-box;
+}
+footer > .f_top > .f_logo img{
+    width:150px;
+    height:163px;
+}
+footer h3{
+    font-size:15px;
+    color:var(--white-color);
+    font-weight: bold;
+    line-height: 40px;
+}
+.f_info{
+    line-height: 2;
+}
+.f_info li{
+    float:left;
+}
+.f_info a{
+    transition:all 0.3s
+}
+.f_info a:hover{
+    color:var(--point-color);
+}
+.f_contact{
+    margin-bottom: 30px;
+}
+.snsList::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.snsList > li{
+    float:left;
+    font-size: 20px;
+    margin-right: 15px;
+    color:var(--white-color);
+}
+.snsList >li:hover:nth-child(1){
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    /* Also define standard property for compatibility */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.snsList >li:hover:nth-child(2){
+    color:#3b5998;
+}
+.snsList >li:hover:nth-child(3){
+    color:#00acee;
+}
+.snsList >li:hover:nth-child(4){
+    color:#c4302b;
+}
+footer > .down{
+    width:100%;
+    height:60px;
+    background-color: var(--point-color);
+    color:var(--white-color);
+    font-size: var(--font-mc);
+    line-height: 60px;
+    text-align: center;
+}
+@media screen and (max-width:860px){
+    footer{font-size: 10px;}
+    footer > .f_top > .f_logo{
+        margin: auto;
+    }
+    footer > .f_top > .f_logo img{
+        width:90px;
+        height: auto;
+    }
+    footer > .f_top > .f_info > h3,
+    footer > .f_top > .f_info > p,
+    footer > .f_top > .f_info > ul > li:nth-child(6),
+    footer > .f_top > .f_info > ul > li:nth-child(7),
+    footer > .f_top > .f_wrap h3{
+        display: none;
+    }
+    footer > .f_top{
+        height: 120px;
+        flex-direction: column;
+        justify-content: center;
+        padding:15px 0;
+    }
+    footer > .f_top > .f_wrap {
+        order: -2;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    footer > .f_top > .f_info {
+        order: 0;
+    }
+    footer > .f_top > .f_logo{
+        order: -4;
+    }
+    .snsList > li{
+        font-size: 30px;
+        margin-right: 20px;
+    }
+    .f_contact{
+        margin-bottom: 0;
+    }
+    footer > .f_top{justify-content: center; text-align: center;}
+    .snsList{width:190px; margin: auto;}
+    footer > .f_top > .f_info > ul{width:300px; margin: auto;}
+    footer > .down{
+        height: 40px;
+        line-height:40px;
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:500px){
+    footer > .f_top > .f_logo{display: none;}
+    footer > .f_top{justify-content: center; text-align: center;}
+    .snsList{width:190px; margin: auto;}
+    footer > .f_top > .f_info > ul{width:300px; margin: auto;}
+    #labels > h1{font-size: 40px;}
+}
